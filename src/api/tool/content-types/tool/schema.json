@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tools",
+  "info": {
+    "singularName": "tool",
+    "pluralName": "tools",
+    "displayName": "Tools"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "goon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::goon.goon",
+      "inversedBy": "tools"
+    }
+  }
+}

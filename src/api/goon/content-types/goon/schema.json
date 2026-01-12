@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goons",
+  "info": {
+    "singularName": "goon",
+    "pluralName": "goons",
+    "displayName": "Goon"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gender": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ]
+    },
+    "bodyType": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Slim",
+        "Athletic",
+        "Heavy",
+        "Average"
+      ]
+    },
+    "tools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tool.tool",
+      "mappedBy": "goon"
+    },
+    "socialMediaUrl": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text",
+      "required": true
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "goon"
+    },
+    "previousWorks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::previous-work.previous-work",
+      "mappedBy": "goon"
+    },
+    "specialty": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::specialty.specialty"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Reviews"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "goon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::goon.goon",
+      "inversedBy": "reviews"
+    }
+  }
+}
